@@ -1,0 +1,91 @@
+baseURL = "https://www.example.com/"
+title = "D7x8 Shell"
+# author = "D7x8"
+ignoreErrors = ["error-remote-getjson"]
+
+[Params]
+
+# Additions start here
+  [Params.Navbar]
+  use = true
+  
+  [Params.Extensions]
+  use = true
+  ext = ".txt" # extension to add after single page
+# Additions stop here
+    
+  # Note: This is for the meta description, which is different from the "description" displayed in the terminal.
+  description = "D7x8's About Page!"
+  [Params.Terminal]
+  # Note: color scheme
+  # Note: You can choose between
+  # Note: hugo-theme-shell original: ["shell-powershell", "shell-ubuntu", "shell-retro", "Molokai"]
+  # Note: gogh theme: https://mayccoll.github.io/Gogh/
+  scheme = "shell-retro"
+  userName = "D7x8"
+  pcName = "Terminal"
+  workDir = "My-Stuff"
+  profile = "About-Me.txt"
+
+  # Note: speed at which text is displayed on the terminal
+  # Note: if set to 0, typing animation will be disabled
+  # Note:
+  # Note: if you want to enable Mathjax, you need to set it to 0
+  # Note: and set "math: true" at front matter in your Markdown file
+  ps1Delay = 0 # prompt speed : [userName]@[pcName]:~/$ , [userName]@[pcName]:~/[workDir]$
+  stdoutDelay = 0 # stdout speed : [description] , files in Params.Tree
+  commandDelay = 50 # command speed : cd [workDir] , cat [profile] , tree ./[folderName]/
+
+  # terminalDelay = 20 : deprecated
+
+  # Note: speed at which text is displayed on the activity pages
+  # Note: if set to 0, typing animation will be disabled
+  # Note: 
+  # Note: if you want to enable Mathjax, you need to set it to 0
+  # Note: and set "math: true" at front matter in your Markdown file
+  titleDelay = 0 # title speed : "title" in front matter
+  contentDelay = 0 # content speed : content in .md file
+
+  # activityDelay = 5 : deprecated
+
+  description = """
+  -------------------------
+  Hello there.
+  My online pseudonym is D7x8.
+  I am a student studying:
+  Programming
+  Hacking
+  Cybersecurity
+  Networking
+  Robotics
+  Design
+  Linux
+  -------------------------
+  """
+
+  
+
+  [Params.Tree]
+  use = true
+  folderName = "My-Interests"
+  # Note: ["ACTIVITY", "URL or PATH TO YOUR MARKDOWN FILE"]
+  files = [ 
+    ["Python", "https://python.org/"],
+    ["HTML", "https://html.com/"],
+    ["CSS", "https://www.w3.org/Style/CSS/Overview.en.html"],
+    ["C", "https://www.cprogramming.com/"],
+    ["C++ (even tho it sucks ass)", "https://i.pcmag.com/imagery/articles/040JHoVNgc1gh2e7sunj82k-1.fit_lim.size_1600x900.v1569492349.png"],
+    ["C#", "https://learn.microsoft.com/en-us/dotnet/csharp/"],
+    ["Java", "https://java.org/"],
+    ["Rust", "https://www.rust-lang.org/"],
+    ["Typescript", "https://www.typescriptlang.org/"],
+    ["Git", "https://git-scm.com/"],
+    ["Shell", "https://www.shellscript.sh/"],
+    ["Arch Linux", "https://archlinux.org/"],
+    ["Parrot Security", "https://www.parrotsec.org/"],
+  ]
+
+[module]
+  [module.hugoVersion]
+    extended = true
+    min = "0.85.0"
